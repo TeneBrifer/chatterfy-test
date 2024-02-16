@@ -16,11 +16,9 @@ export default function getUsers(
     lastName,
     gender,
     subscription,
-    fullSearch,
   } = query;
   res.statusCode = 200;
   res.setHeader("content-Type", "application/json");
-  console.log(sortingBy);
   let usersDataSend = usersData
     .filter((user) =>
       email
