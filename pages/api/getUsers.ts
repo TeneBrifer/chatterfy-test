@@ -20,6 +20,7 @@ export default function getUsers(
   } = query;
   res.statusCode = 200;
   res.setHeader("content-Type", "application/json");
+  console.log(sortingBy);
   let usersDataSend = usersData
     .filter((user) =>
       email
@@ -52,18 +53,22 @@ export default function getUsers(
         case "age": {
           x = a["age"];
           y = b["age"];
+          break;
         }
         case "birthdate": {
           x = new Date(a["birthdate"]).getTime();
           y = new Date(b["birthdate"]).getTime();
+          break;
         }
         case "createdAt": {
           x = new Date(a["createdAt"]).getTime();
           y = new Date(b["createdAt"]).getTime();
+          break;
         }
         default: {
           x = new Date(a["createdAt"]).getTime();
           y = new Date(b["createdAt"]).getTime();
+          break;
         }
       }
       switch (sortingOrder) {
