@@ -227,3 +227,8 @@
     transform: rotate(0deg);
   }
 }
+
+.catalogContainer {
+  justify-content: flex;
+  padding: 20px;
+}
